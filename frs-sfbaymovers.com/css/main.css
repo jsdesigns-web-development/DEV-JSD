@@ -1,0 +1,102 @@
+:root {
+  /* BACKGROUND COLORS */
+  --main-bg-color: white;
+  --secondary-bg-color: ivory;
+  --nav-bg-color: slategray;
+  /* FONT COLORS */
+  --main-title-light-font-color: whitesmoke;
+  --main-title-dark-font-color: slategray;
+  --main-font-color: black;
+  --secondary-font-color: dimgray;
+  /* ACCENT COLORS */
+  --primary-green: #006837;
+  --primary-blue: #0071bc;
+  /* BORDERS */
+  --section-border-color: 1px solid rgba(0,0,0, 0.3);
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navigation {
+  background-color: var(--nav-bg-color);
+  width: 100%;
+  height: 100px;
+  border-bottom: var(--section-border-color);
+  text-align: right;
+  padding-top: 2.25em;
+  padding-right: 3em;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: 0em 1em 0em 1em;
+  font-size: 1.35em;
+  font-weight: bold;
+  color: var(--main-title-light-font-color);
+}
+
+.hero {
+  background-color: var(--main-bg-color);
+  width: 100%;
+  height: 450px;
+  border-bottom: var(--section-border-color);
+  margin: 0 auto;
+}
+
+.hero-div {
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-right: 2em;
+  width: 95%;
+  height: 450px;
+  text-align: left;
+}
+
+.hero-images-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.hero-logo {
+  height: 300px;
+  margin: 0 auto;
+  padding-bottom: 3.5em;
+  padding-left: 5em;
+}
+
+.hero-truck {
+  height: 400px;
+  margin: 0 auto;
+  padding-left: 15em;
+}
+
+.about {
+  background-color: var(--secondary-bg-color);
+  width: 100%;
+  height: 300px;
+  border-bottom: var(--section-border-color);
+}
+
+.products {
+  background-color: var(--main-bg-color);
+  width: 100%;
+  height: 300px;
+  border-bottom: var(--section-border-color);
+}
+
+.contact {
+  background-color: var(--secondary-bg-color);
+  width: 100%;
+  height: 300px;
+  border-bottom: var(--section-border-color);
+}
+
+.footer {
+  background-color: var(--nav-bg-color);
+  width: 100%;
+  height: 250px;
+  border-bottom: var(--section-border-color);
+}

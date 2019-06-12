@@ -1,0 +1,32 @@
+
+.con-first {
+  margin-top: 6em;
+  margin-bottom: 4em;
+}
+
+.con-first p {
+  color: gray;
+}
+
+.con-first a {
+  color: #FF5733;
+}
+
+.con-first a:hover {
+  text-decoration: none;
+  color: #C70039;
+}
+
+.con-second {
+  /*-webkit-box-shadow: 0px 0px 23px -5px rgba(105,105,105,1);
+  -moz-box-shadow: 0px 0px 23px -5px rgba(105,105,105,1);
+  box-shadow: 0px 0px 23px -5px rgba(105,105,105,1);*/
+}
+
+.con-first.jumbotron {
+  margin-top: -3em;
+}
+
+.form-control {
+  background: #f8f9fa;
+}
