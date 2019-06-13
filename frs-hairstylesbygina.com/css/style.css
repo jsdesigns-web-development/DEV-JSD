@@ -1075,3 +1075,24 @@ h1, h2, h3, h4, h5,
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2); }
+
+
+
+/*waxing prices*/
+table {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.servicetype {
+  text-align: left !important;
+  margin-right: .5em;
+}
+.servicecost {
+  text-align: left !important;
+  margin-left: .5em;
+}
+
+.emptycell {
+  width: 10%;
+}
