@@ -1096,3 +1096,7 @@ table {
 .emptycell {
   width: 10%;
 }
+
+.site-section.bg-light {
+  padding: 0 !important;
+}
