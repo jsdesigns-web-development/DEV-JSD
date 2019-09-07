@@ -6,6 +6,7 @@
   ***  Author: Brian Jason
   ******************************/
 
+
   // just querying the DOM...like a boss!
   var links = document.querySelectorAll(".itemLinks");
   var wrapper = document.querySelector("#wrapper");
@@ -24,15 +25,46 @@
 
   // set first item as active
   links[activeLink].classList.add("active");
+  setComparisonImage(activeLink);
+
+
+  // set first comparison image
+  var compImg = document.getElementById("comparisonImgDiv");
+  console.log(compImg);
+  var activeId = document.getElementById("item" + activeLink);
+  console.log(activeId.style.backgroundImage);
+
+
 
   function setClickedItem(e) {
       removeActiveLinks();
       resetTimer();
 
       var clickedLink = e.target;
+      //console.log(JSON.stringify(e.target));
       activeLink = clickedLink.itemID;
 
       changePosition(clickedLink);
+  }
+
+  function setNextItem() {
+      removeActiveLinks();
+      resetTimer();
+
+      activeLink +=1;
+      var clickedLink = {"itemID":activeLink};
+
+      changePosition(clickedLink);
+  }
+
+  function setLastItem() {
+      removeActiveLinks();
+      resetTimer();
+
+      //var clickedLink = e.target;
+      activeLink -= 1;
+
+      changePosition(activeLink);
   }
 
   function removeActiveLinks() {
@@ -44,12 +76,16 @@
   // Handle changing the slider position as well as ensure
   // the correct link is highlighted as being active
   function changePosition(link) {
+      //console.log(link.getAttribute("data-pos"));
       var position = link.getAttribute("data-pos");
 
       var translateValue = "translate3d(" + position + ", 0px, 0)";
       wrapper.style.transform = translateValue;
 
       link.classList.add("active");
+
+      setComparisonImage(activeLink);
+      getActiveImageDimensions();
   }
 
 //
@@ -78,5 +114,5 @@ function goToNextItem() {
     }
  
     var newLink = links[activeLink];
-    changePosition(newLink);
+    changePosition(newLink);
 }

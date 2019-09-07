@@ -31,3 +31,32 @@ function fileNames() {
 function directoryPath() {
   return "img/"
 }
+
+function getActiveImageFile(activeLinkVal){
+  var element = document.getElementById("item" + activeLinkVal);
+  urlArray = window.getComputedStyle(element).getPropertyValue('background-image').split('/');
+  return urlArray[urlArray.length-1].split(')')[0].split('\"')[0];
+}
+
+function setComparisonImage(activeLinkVal){
+/*
+  var urlString = 'url(' + directoryPath() + getActiveImageFile(activeLinkVal) + ')';
+  comparisonImgElement.style.backgrounImage = urlString;
+  console.log(urlString);
+*/
+
+var comparisonImgElement = document.getElementById('comparisonImgDiv');
+
+comparisonImgElement.innerHTML = '<img id=\"comparisonImg\" src=\"' + directoryPath() +
+getActiveImageFile(activeLinkVal) +  '\">';
+
+}
+
+function getActiveImageDimensions() {
+  // Create dummy image to get real width and height
+
+    var myImg = document.querySelector("#comparisonImg");
+    var realWidth = myImg.naturalWidth;
+    var realHeight = myImg.naturalHeight;
+    console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+}
