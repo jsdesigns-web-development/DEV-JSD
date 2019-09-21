@@ -1,5 +1,5 @@
 /*
-  Backlog:
+  DONE:
 --------------------------------------------------------------------------------
   - On page load, loop through each file from fileNames()
   1. add div elements to html
@@ -26,19 +26,17 @@
     }
     ```
 --------------------------------------------------------------------------------
+*/
 
 
+/* START Compose insert-strings */
 
-
-
-/* Add new Div                                                                */
-
-// return div's html
+// returns div's html
 function divString(num) {
   return "<div id=\"item" + num + "\" class=\"content\"></div>"
 }
-/*                                                                Add new Div */
-/* loop through fileNames                                                     */
+
+// returns nav item's html
 function navString(num) {
   if(i == 0) {
     return '<li class=\"itemLinks\" data-pos=\"0px\"></li>';
@@ -47,15 +45,21 @@ function navString(num) {
   }
 }
 
+// returns css style information
 function styleString(num) {
   return '#item' + num + ' {\n background-image: url("' + directoryPath() + fileNames()[num] + "\")\n}";
 }
+/* END Compose insert-strings */
+
+/* START Compose insert-strings */
 
 function insertBlock(targetId, content){
   $('#' + targetId).append(content);
 }
+/* End Compose insert-strings */
 
 
+/* loop through fileNames                                                     */
 // Generate HTML and CSS strings that will later be inserted into the HTML file.
 var divBlock = "";
 var navBlock = "";

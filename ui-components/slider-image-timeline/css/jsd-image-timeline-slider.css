@@ -13,8 +13,10 @@
 
 
   #contentContainer {
-    width: 550px;
-    height: 350px;
+    width: 549px;
+    /*height: 733px;*/
+    height: 413px;
+
     border: 5px black solid;
     overflow: hidden;
   }
@@ -28,7 +30,8 @@
   .content {
       float: left;
       width: 550px;
-      height: 350px;
+      height: 733px;
+      /*height: 413px;*/
       white-space: normal;
       background-repeat: no-repeat;
   }
@@ -50,24 +53,30 @@
               margin: 10px;
               list-style: none;
               cursor: pointer;
-              background-color: #CCCCCC;
+              background-color: white;
               padding: 5px;
               border-radius: 50%;
-              border: black 5px solid;
+              border: black 2px solid;
           }
               #navLinks ul li:hover {
                   background-color: #FFFF00;
               }
+
+              @media (hover: none) {
+                  #navLinks ul li:hover { background-color: inherit; }
+              }
+
               #navLinks ul li.active {
-                  background-color: #333333;
+                  background-color: #E33833;
                   color: #FFFFFF;
                   outline-width: 7px;
+                  border-color: #E33833;
               }
                   #navLinks ul li.active:hover {
-                      background-color: #484848;
+                      /*background-color: #484848;*/
                       color: #FFFFFF;
                   }
 
 #comparisonImg {
-
+  display: none;
 }

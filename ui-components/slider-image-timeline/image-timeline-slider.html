@@ -4,15 +4,11 @@
     <meta charset="utf-8">
     <title>JS Designs - Image Timeline Slider</title>
     <link rel="stylesheet" type="text/css" href="css/jsd-image-timeline-slider.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
 
   <body>
-    <div id="contentContainer">
-      <div id="wrapper">
-      </div><!---- wrapper ---->
 
-    </div> <!---- contentContainer ---->
 
     <div id="navLinks">
       <ul id="navUl">
@@ -22,6 +18,15 @@
     <div style="text-align: center;">
       <button id="backImg" onclick="setLastItem()"><</button><button id="nextImg" onclick="setNextItem()">></button>
     </div>
+
+    <div id="contentContainer">
+
+      <div id="wrapper">
+      </div><!---- wrapper ---->
+
+    </div> <!---- contentContainer ---->
+
+
 
     <div id="comparisonImgDiv">
     </div>
@@ -34,7 +39,6 @@
       $('head').append('<style>' + styleBlock + '</style>');
       insertBlock("wrapper", divBlock);
       insertBlock("navUl", navBlock);
-
     </script>
 
     <script type="text/javascript" src="js/jsd-image-timeline-slider.js"></script>

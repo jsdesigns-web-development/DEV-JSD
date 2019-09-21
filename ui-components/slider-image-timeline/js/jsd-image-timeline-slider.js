@@ -30,9 +30,9 @@
 
   // set first comparison image
   var compImg = document.getElementById("comparisonImgDiv");
-  console.log(compImg);
+  //console.log(compImg);
   var activeId = document.getElementById("item" + activeLink);
-  console.log(activeId.style.backgroundImage);
+  //console.log(activeId.style.backgroundImage);
 
 
 
@@ -47,6 +47,7 @@
       changePosition(clickedLink);
   }
 
+/*
   function setNextItem() {
       removeActiveLinks();
       resetTimer();
@@ -66,7 +67,7 @@
 
       changePosition(activeLink);
   }
-
+*/
   function removeActiveLinks() {
       for (var i = 0; i < links.length; i++) {
           links[i].classList.remove("active");
@@ -76,6 +77,7 @@
   // Handle changing the slider position as well as ensure
   // the correct link is highlighted as being active
   function changePosition(link) {
+
       //console.log(link.getAttribute("data-pos"));
       var position = link.getAttribute("data-pos");
 
@@ -85,7 +87,10 @@
       link.classList.add("active");
 
       setComparisonImage(activeLink);
-      getActiveImageDimensions();
+      var activeImageDimensions = getActiveImageDimensions();
+      changeStyleValue('#contentContainer', 'height', activeImageDimensions.height);
+      changeStyleValue(getActiveElement(activeLink), 'height', activeImageDimensions.height);
+
   }
 
 //

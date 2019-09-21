@@ -32,8 +32,13 @@ function directoryPath() {
   return "img/"
 }
 
+function getActiveElement(activeLinkVal) {
+  return document.getElementById("item" + activeLinkVal);
+}
+
+
 function getActiveImageFile(activeLinkVal){
-  var element = document.getElementById("item" + activeLinkVal);
+  var element = getActiveElement(activeLinkVal);
   urlArray = window.getComputedStyle(element).getPropertyValue('background-image').split('/');
   return urlArray[urlArray.length-1].split(')')[0].split('\"')[0];
 }
@@ -45,10 +50,10 @@ function setComparisonImage(activeLinkVal){
   console.log(urlString);
 */
 
-var comparisonImgElement = document.getElementById('comparisonImgDiv');
+  var comparisonImgElement = document.getElementById('comparisonImgDiv');
 
-comparisonImgElement.innerHTML = '<img id=\"comparisonImg\" src=\"' + directoryPath() +
-getActiveImageFile(activeLinkVal) +  '\">';
+  comparisonImgElement.innerHTML = '<img id=\"comparisonImg\" src=\"' + directoryPath() +
+  getActiveImageFile(activeLinkVal) +  '\">';
 
 }
 
@@ -58,5 +63,25 @@ function getActiveImageDimensions() {
     var myImg = document.querySelector("#comparisonImg");
     var realWidth = myImg.naturalWidth;
     var realHeight = myImg.naturalHeight;
-    console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+    //console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+    return {'width': realWidth, 'height': realHeight};
 }
+
+function changeStyleValue(element, attribute, value){
+  /* Example Parameter Values
+    element = '.content';
+    attribute = 'height';
+    value = 733px;
+  */
+  $(element).css(attribute, value);
+}
+
+
+/*
+  TODO:
+  1. use active dimension to resize wrapper
+  2. hide #comparisonImg
+  3. implement forward & backward buttons
+  4. Pause auto-scroll when forward and backward buttons are used.
+
+*/
