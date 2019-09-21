@@ -1,0 +1,56 @@
+:root {
+  --debug-border: 1px solid black;
+}
+
+* { background-color: rgba(255,0,0,.2); border: var(--debug-border);}
+* * { background-color: rgba(0,255,0,.2); border: var(--debug-border);}
+* * * { background-color: rgba(0,0,255,.2); border: var(--debug-border);}
+* * * * { background-color: rgba(255,0,255,.2); border: var(--debug-border);}
+* * * * * { background-color: rgba(0,255,255,.2); border: var(--debug-border);}
+* * * * * * { background-color: rgba(255,255,0,.2); border: var(--debug-border);}
+* * * * * * * { background-color: rgba(255,0,0,.2); border: var(--debug-border);}
+* * * * * * * * { background-color: rgba(0,255,0,.2); border: var(--debug-border);}
+* * * * * * * * * { background-color: rgba(0,0,255,.2); border: var(--debug-border);}
+
+
+
+body {
+  padding: 1em;
+}
+#containerHolder {
+  width: 100%;
+}
+#imageWindow {
+  width: calc(549px + 549px*0.2);
+  /*height: 733px;*/
+  height: 425px;
+  /*overflow: hidden;*/
+  margin: 0 auto;
+}
+
+.imgWindowElement {
+  /*display: inline-block;*/
+  padding: 0px;
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.navButton {
+  margin-top: 2em;
+}
+
+#displayImage {
+    opacity: 1;
+    border: 5px black solid;
+    border-radius: 5px;
+
+    -webkit-transition: opacity 2s ease-in;
+       -moz-transition: opacity 2s ease-in;
+        -ms-transition: opacity 2s ease-in;
+         -o-transition: opacity 2s ease-in;
+            transition: opacity 2s ease-in;
+}
+
+#displayImage.load {
+    opacity: 0;
+}

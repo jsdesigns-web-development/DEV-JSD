@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Designs - Image Flipper</title>
+    <link rel="stylesheet" type="text/css" href="css/image-flipper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div id="containerHolder" class="container">
+      <div id="imageWindow" class="row">
+        <div id="backButton" class="imgWindowElement navButton col-1">
+          <button type="button" class="btn btn-secondary" onclick="backImg()">&nbsp;<&nbsp;</button>
+        </div>
+        <div id="imageContainer" class="imgWindowElement col-10">
+          <img id="displayImage" src="img/attach51213_20190820_183236.jpg" width="100%" height="100%" alt="">
+        </div>
+        <div id="nextButton" class="imgWindowElement col-1">
+          <button type="button" class="btn btn-secondary navButton" onclick="nextImg()">&nbsp;>&nbsp;</button>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/image-flipper.js"></script>
+  </body>
+</html>
