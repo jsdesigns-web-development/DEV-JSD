@@ -36,7 +36,7 @@
 
 @-webkit-keyframes cornerScaleUp {
 	from {
-		-webkit-transform: scale(0);	
+		-webkit-transform: scale(0);
 	}
 	to {
 		-webkit-transform: scale(1);
@@ -46,7 +46,7 @@
 @keyframes cornerScaleUp {
 	from {
 		-webkit-transform: scale(0);
-		transform: scale(0);	
+		transform: scale(0);
 	}
 	to {
 		-webkit-transform: scale(1);
@@ -1556,6 +1556,7 @@
 	animation: moveFront 0.5s forwards;
 }
 
+/* This controls the image's background shadow */
 .fxPhotoBrowse li::before,
 .fxPhotoBrowse li::after {
 	content: '';
@@ -1563,7 +1564,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 337.906px; /* originally 100% */
 	pointer-events: none;
 	background-color: rgba(0,0,0,0.6);
 	transition: opacity 0.5s;
@@ -1595,48 +1596,48 @@
 	100% { -webkit-transform: translateX(0%) rotateY(0deg) rotateX(0deg); }
 }
 
-@keyframes moveBehind { 
+@keyframes moveBehind {
 	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
 	50% { z-index: 9999; -webkit-transform: translateX(-105%) rotateY(35deg) rotateX(10deg); transform: translateX(-105%) rotateY(35deg) rotateX(10deg); }
 	100% { -webkit-transform: translateX(0%) rotateY(0deg) rotateX(0deg); transform: translateX(0%) rotateY(0deg) rotateX(0deg); }
 }
 
-@-webkit-keyframes appear { 
+@-webkit-keyframes appear {
 	0% { -webkit-transform: translateZ(-200px); }
 	51% { z-index: 9999; }
 	70% { z-index: 9999; -webkit-transform: translateZ(50px); }
 	100% { z-index: 9999; -webkit-transform: translateZ(0px); }
 }
 
-@keyframes appear { 
+@keyframes appear {
 	0% { -webkit-transform: translateZ(-200px); transform: translateZ(-200px); }
 	51% { z-index: 9999; }
 	70% { z-index: 9999; -webkit-transform: translateZ(50px); transform: translateZ(50px); }
 	100% { z-index: 9999; -webkit-transform: translateZ(0px); transform: translateZ(0px); }
 }
 
-@-webkit-keyframes disappear { 
+@-webkit-keyframes disappear {
 	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
 	30% {-webkit-transform: translateZ(50px); }
 	50% { z-index: 9999; }
 	100% { -webkit-transform: translateZ(-200px); }
 }
 
-@keyframes disappear { 
+@keyframes disappear {
 	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
 	30% {-webkit-transform: translateZ(50px);transform: translateZ(50px); }
 	50% { z-index: 9999; }
 	100% { -webkit-transform: translateZ(-200px); transform: translateZ(-200px); }
 }
 
-@-webkit-keyframes moveFront { 
+@-webkit-keyframes moveFront {
 	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
 	50% { -webkit-transform: translateX(-105%) rotateY(35deg) rotateX(10deg); }
 	51% { z-index: 9999; }
 	100% { z-index: 9999; -webkit-transform: translateX(0%) rotateY(0deg) rotateX(0deg); }
 }
 
-@keyframes moveFront { 
+@keyframes moveFront {
 	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
 	50% { -webkit-transform: translateX(-105%) rotateY(35deg) rotateX(10deg); transform: translateX(-105%) rotateY(35deg) rotateX(10deg); }
 	51% { z-index: 9999; }
@@ -1699,13 +1700,13 @@
 	opacity: 0;
 }
 
-@-webkit-keyframes hideLeft { 
+@-webkit-keyframes hideLeft {
 	0% { -webkit-transform: translateZ( 0px ); }
 	40% { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); z-index: 9999; }
 	100% { opacity: 1; -webkit-transform: translateZ( -400px ); }
 }
 
-@keyframes hideLeft { 
+@keyframes hideLeft {
 	0% { -webkit-transform: translateZ( 0px ); transform: translateZ( 0px ); }
 	40% { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); z-index: 9999; }
 	100% { opacity: 1; -webkit-transform: translateZ( -400px ); transform: translateZ( -400px ); }
@@ -1725,13 +1726,13 @@
 	100% { -webkit-transform: translateZ( 0px ); transform: translateZ( 0px ); opacity: 1; z-index: 9999; }
 }
 
-@-webkit-keyframes hideRight { 
+@-webkit-keyframes hideRight {
 	0% { -webkit-transform: translateZ( 0px ); }
 	40% { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); z-index: 9999; }
 	100% { opacity: 1; -webkit-transform: translateZ( -400px ); }
 }
 
-@keyframes hideRight { 
+@keyframes hideRight {
 	0% { -webkit-transform: translateZ( 0px ); transform: translateZ( 0px ); }
 	40% { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); z-index: 9999; }
 	100% { opacity: 1; -webkit-transform: translateZ( -400px ); transform: translateZ( -400px ); }

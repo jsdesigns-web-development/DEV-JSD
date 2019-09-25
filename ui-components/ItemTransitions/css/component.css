@@ -106,7 +106,7 @@
 	overflow: hidden;
 	text-align: center;
 	line-height: 200px;
-	top: 50%;
+	top: 25%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
@@ -163,28 +163,36 @@
 
 a.prev::before {
 	content: "\e601";
+	color: #E33834;
 }
 
 a.next::before {
 	content: "\e600";
+	color: #E33834;
 }
 
 @media screen and (max-width: 35.5em) {
+	/*.component nav a::before,
+	.component nav a::after {
+		color: #E33834;
+	}*/
+
+
 	.component-small nav a {
-		top: 100%;
+		top: 25%;
 		margin-top: 10px;
 		-webkit-transform: translateY(0%);
 		transform: translateY(0%);
 	}
 
 	.component-small nav a.prev {
-		left: 50%;
+		left: 20%;
 		margin-left: -80px;
 	}
 
 	.component-small nav a.next {
 		margin-left: 20px;
 		right: auto;
-		left: 50%;
+		left: 80%;
 	}
 }

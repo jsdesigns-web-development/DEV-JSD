@@ -75,6 +75,14 @@
 		var onEndAnimationNextItem = function() {
 			this.removeEventListener( animEndEventName, onEndAnimationNextItem );
 			classie.addClass( this, 'current' );
+			var idName = $('.current img').attr('id');
+			var highness = $('#' + idName).height();
+			console.log(highness);
+			//		.fxPhotoBrowse li::before
+			////$('.fxPhotoBrowse li::before').height(highness + "px");
+			//		.fxPhotoBrowse li::after
+			////$('.fxPhotoBrowse li::after').height(highness + "px");
+
 			classie.removeClass( this, dir === 'next' ? 'navInNext' : 'navInPrev' );
 			++cntAnims;
 			if( cntAnims === 2 ) {

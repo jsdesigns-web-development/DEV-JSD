@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="css/fxsmall.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
-	<style>
+	<!--style>
 		:root {
 		  --debug-border: 1px solid black;
 		}
@@ -29,7 +29,13 @@
 		* * * * * * * * { background-color: rgba(0,255,0,.2); border: var(--debug-border);}
 		* * * * * * * * * { background-color: rgba(0,0,255,.2); border: var(--debug-border);}
 
-	</style>
+		.itemwrap li img {
+			padding-top: 0;
+		}
+
+	</style-->
+
+
 	<body>
 		<div class="container">
 
@@ -109,7 +115,7 @@
 
 			function generateContent(){
 				var fileArray = fileNames();
-				var contentArray = ["<ul class=\"itemwrap\">\n"];
+				var contentArray = ["<ul id=\"itemWrap\" class=\"itemwrap\">\n"];
 
 				// iterate through line strings
 				for(var x=0; x < fileArray.length - 1; x++) {
@@ -136,23 +142,48 @@
 				$('#component').append(content);
 			}
 
-			function getMaxImgDimensions(){
-				var maxWidth = 0;
-				var maxHeight = 0;
+			function isGreaterThan(naturalVal, minVal) {
+				if(naturalVal > minVal) {
+					return naturalVal;
+				}	else {
+					return minVal;
+				}
+			}
+
+			function getMinImgDimensions(){
+				var minWidth = 0;
+				var minHeight = 0;
 				var myImg;
 
 
 				for(x=0; x<fileNames().length-1; x++){
 					var imgStr = "image" + x;
 					myImg = document.getElementById(imgStr);
+/*
+					minHeight = isGreaterThan(myImg.height, minHeight);
+					minWidth = isGreaterThan(myImg.width, minWidth);
+*/
+					var highness = $('#'+imgStr).height();
+					var wideness = $('#'+imgStr).width();
+					minHeight = isGreaterThan(highness, minHeight);
+					minWidth = isGreaterThan(wideness, minWidth);
 
-					if(myImg.naturalWidth > maxWidth){ maxWidth = myImg.naturalWidth;	}
-					if(myImg.naturalHeight > maxHeight){	maxHeight = myImg.naturalHeight;	}
-
+					console.log("#" + imgStr + ": " + myImg.naturalWidth + " width x " + myImg.naturalHeight + " height (NATURAL)");
+					console.log("#" + imgStr + ": " + minWidth + " width x " + minHeight + " height");
 				}
+				console.log("FINAL: " + minWidth + " width x " + minHeight + " height");
+				return { 'width': minWidth, 'height': minHeight };
 
-				return { 'width': maxWidth, 'height': maxHeight };
+			}
 
+			function setContainerDimensions(maxWidth, maxHeight){
+				var styleBlock = "<style>\n" +
+				"  #component {\n		height: " + (maxHeight) + "px;\n		min-width: " + (maxWidth) + "px;\n	}\n\n" +
+				/*"  #component {\n		min-height: " + (maxHeight) + "px;\n		min-width: " + (maxWidth) + "px;\n	}\n\n" +*/
+				"  .itemwrap {\n		max-height: " + maxHeight + "px;\n			}\n\n" +
+				"</style>";
+
+				$('head').append(styleBlock);
 			}
 
 			var imgContent = generateContent();
@@ -160,17 +191,29 @@
 
 			document.addEventListener("DOMContentLoaded", function(event) {
 				// loop through images and determine max width+height for image container
-				var maxImgDimensions = getMaxImgDimensions();
+				var minImgDimensions = getMinImgDimensions();
+
+				// need to reload page because img dimensions occassionally return as 0 x 0
+				if(minImgDimensions.width == 0 && minImgDimensions.height == 0) {
+					location.reload();
+				}
 
 				// set image container dimensions according to max dimensions
-				var strPx = '\'' + maxImgDimensions.height + 'px\'';
-				console.log(strPx);
+				var strPx = '\'' + minImgDimensions.height + 'px\'';
+				//console.log(strPx);
+
 				//document.getElementById('imgDisplaySection').style.height = '\'' + maxImgDimensions.height + 'px\'';
-				var styleBlock = "<style>\n#imgDisplaySection {\n		height: 600px;\n	}\n</style>";
-				$('head').append(styleBlock);
+				setContainerDimensions(minImgDimensions.width, minImgDimensions.height);
+
 
 			});
 
+
+		// make this the height of the image
+		/*
+		.fxPhotoBrowse li::before,
+		.fxPhotoBrowse li::after
+		*/
 
 
 		</script>
